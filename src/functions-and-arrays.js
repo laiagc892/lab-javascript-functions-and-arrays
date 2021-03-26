@@ -1,12 +1,45 @@
 // Iteration #1: Find the maximum
-
+x = 2;
+y = 5;
+function maxOfTwoNumbers(a, b) {
+  return a > b ? a : b;
+}
+maxOfTwoNumbers(x, y);
 
 // Iteration #2: Find longest word
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
+function findLongestWord(array) {
+  if (array.length==0) {
+    return null
+  }
+  // 1. Crear una variable per guardar-nos la paraula de major longitud trobada fins el moment.
+  let longestWord = words[0];
+
+  // 2. Recórrer l'array de paraules. A mesura que recorrem l'array, contem les lletres de cadascuna de les paraules.
+
+  // 3. Si trobem una paraula la longitud de la qual és major que la que ja teníem fins ara, aquesta paraula passa a ser la nostra "longestWord". 
+  for (let i = 0; i < array.length; i++) {
+    longestWord = words[i].length > longestWord.length ? words[i] : longestWord;
+  }
+  
+  return longestWord
+}
+
+findLongestWord(words);
+
 // Iteration #3: Calculate the sum
 
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
+function sumNumbers(numbers){
+  let sumaTotal = 0
+  let seguentValor;
+  for (let i=0; i<words.length;i++){
+    seguentValor = numbers[i]
+    sumaTotal = sumaTotal + seguentValor
+  }
+  return sumaTotal
+}
 
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
@@ -32,6 +65,28 @@ const wordsUnique = [
 
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
+
+function doesWordExist(words, wordToFind) {
+  if (words.length == 0) {
+    return null
+  }
+  // Valor inicial: Hem trobat ja la paraula?
+  let foundWord = false;
+  let i = 0;
+
+  // Recórrer l'array de words
+  // Comprovar si a la posició actual hi és la paraula que ens passen com a paràmetre a "wordToFind"
+  while(!trobada && i<words.length) {
+    if (wordToFind == words[i]) {
+      trobada = true;
+    }
+
+    i++   // Mirar la següent posició de l'array
+  }
+
+  // Si hem trobat la paraula que buscàvem: return true
+  // Si no hem trobat la paraula que buscàvem: seguir buscant fins acabar de recórrer l'array.
+}
 
 // Iteration #7: Count repetition
 const wordsCount = [
